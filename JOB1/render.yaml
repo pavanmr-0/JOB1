@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: jobportal
+    env: docker
+    region: ohio
+    plan: free
+    # Render will build using the repository Dockerfile. No buildCommand needed.
+    # The service will expose the port configured by the container (Gunicorn binds to 8000).
+    startCommand: ./entrypoint.sh
+    envVars:
+      - key: DEBUG
+        value: false
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DATABASE_URL
+        value: ''
+    healthCheckPath: /

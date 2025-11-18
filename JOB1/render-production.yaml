@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: jobportal-production
+    env: docker
+    region: ohio
+    plan: free
+    startCommand: ./entrypoint.sh
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DEBUG
+        value: false
+      - key: DATABASE_URL
+        value: ''
+      - key: AWS_S3_BUCKET_NAME
+        value: ''
+      - key: AWS_ACCESS_KEY_ID
+        value: ''
+      - key: AWS_SECRET_ACCESS_KEY
+        value: ''
+      - key: AWS_S3_REGION_NAME
+        value: 'us-east-1'
+    healthCheckPath: /
