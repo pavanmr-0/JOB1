@@ -1,19 +1,21 @@
 FROM python:3.11-slim
 
 # Install system packages required for Pillow, WeasyPrint and psycopg2
+# Use Debian-compatible package names (libpango-1.0-0, libjpeg62-turbo-dev)
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
     gcc \
     libpq-dev \
     libxml2-dev \
     libxslt1-dev \
-    libjpeg-dev \
+    libjpeg62-turbo-dev \
     zlib1g-dev \
     libffi-dev \
     libcairo2 \
-    libpango1.0-0 \
+    libpango-1.0-0 \
     libgdk-pixbuf2.0-0 \
     shared-mime-info \
+    fonts-liberation \
     && rm -rf /var/lib/apt/lists/*
 
 ENV PYTHONDONTWRITEBYTECODE=1 \
