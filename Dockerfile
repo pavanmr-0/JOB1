@@ -1,8 +1,14 @@
-FROM python:3.11-slim
+FROM python:3.11-bullseye-slim
+
+# Avoid interactive prompts during package installation
+ENV DEBIAN_FRONTEND=noninteractive
 
 # Install system packages required for Pillow, WeasyPrint and psycopg2
-# Use Debian-compatible package names (libpango-1.0-0, libjpeg62-turbo-dev)
-RUN apt-get update && apt-get install -y --no-install-recommends \
+# Use Debian-compatible package names and make apt update tolerant to release info changes
+RUN apt-get update --allow-releaseinfo-change && \
+    apt-get install -y --no-install-recommends \
+    ca-certificates \
+    apt-transport-https \
     build-essential \
     gcc \
     libpq-dev \
