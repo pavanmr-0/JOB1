@@ -1,4 +1,4 @@
-# 🚀 Quick Render Deployment Guide
+# 🚀 Quick Render Deployment Guide - CORRECTED
 
 > Simple 5-minute deployment guide for JobPortal to Render
 
@@ -8,9 +8,9 @@
 
 ## 5 Steps to Deploy
 
-### Step 1: Push to GitHub
+### Step 1: Commit & Push to GitHub
 ```bash
-cd job1
+# From project root directory
 git add .
 git commit -m "Ready for Render deployment"
 git push origin main
@@ -24,13 +24,13 @@ Visit https://render.com/dashboard and sign in
 2. Select your **JobPortal repository**
 3. **Name**: `jobportal`
 4. **Environment**: Python 3
-5. **Build Command**: (auto-filled)
+5. **Build Command**: 
    ```
-   pip install -r requirements.txt && python manage.py collectstatic --noinput && python manage.py migrate
+   pip install -r requirements.txt && cd job1 && python manage.py collectstatic --noinput && python manage.py migrate
    ```
-6. **Start Command**: (auto-filled)
+6. **Start Command**: 
    ```
-   gunicorn job1.wsgi:application
+   cd job1 && gunicorn job1.wsgi:application
    ```
 7. Click **"Create Web Service"**
 
@@ -78,9 +78,9 @@ git push origin main
 
 | Problem | Solution |
 |---------|----------|
-| Build fails | Check build logs, ensure requirements.txt exists |
+| Build fails | Check build logs, ensure requirements.txt in root directory |
 | Static files missing | Already handled by build script |
-| 502 Bad Gateway | Check logs, verify gunicorn command |
+| 502 Bad Gateway | Check logs, verify gunicorn command and directory structure |
 | Database not found | Add PostgreSQL from service dashboard |
 
 ## Security Checklist
@@ -96,7 +96,7 @@ git push origin main
 4. ✅ Add team members
 
 ## Help
-- **Full Guide**: See `DEPLOYMENT.md`
+- **Full Guide**: See `DEPLOYMENT.md` (in job1 folder)
 - **Render Docs**: https://render.com/docs
 - **Django Docs**: https://docs.djangoproject.com
 

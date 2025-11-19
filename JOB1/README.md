@@ -1,375 +1,395 @@
-# 📚 Job Portal - Documentation Index
+# JobPortal - Modern Django Job Portal
 
-## 🚀 Getting Started
+A professional, full-featured job portal web application built with Django 5.2 and Bootstrap 5. Connect job seekers with employers in a beautiful, modern interface.
 
-Start here if you're new to the Job Portal:
+![Django](https://img.shields.io/badge/Django-5.2.8-092E20?style=flat-square&logo=django)
+![Python](https://img.shields.io/badge/Python-3.11+-3776AB?style=flat-square&logo=python)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3-7952B3?style=flat-square&logo=bootstrap)
+![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
 
-1. **[QUICK_START_GUIDE.md](./QUICK_START_GUIDE.md)** - Your first step
-   - Getting started instructions
-   - Navigation guide
-   - Common tasks
-   - Troubleshooting tips
+## Features
 
----
+### 🎯 Core Features
+- **User Management**: Custom user authentication with role-based access (Job Seeker, Employer, Admin)
+- **Job Listings**: Browse thousands of job opportunities with advanced filtering
+- **Job Applications**: Apply directly to jobs and track application status
+- **Company Profiles**: Employer dashboard to create and manage company profiles
+- **Job Posting**: Employers can post new job openings with detailed information
+- **Resume Builder**: Job seekers can create and manage professional resumes
+- **User Profiles**: Customizable user profiles with preference management
+- **Modern UI/UX**: Responsive design with Bootstrap 5 and smooth animations
 
-## 📖 Comprehensive Documentation
+### 💼 Employer Features
+- Create and manage company profiles
+- Post job listings with detailed descriptions
+- View job applications and applicants
+- Manage job postings (create, edit, delete)
+- Track active job listings
 
-### Project Overview
-- **[PROJECT_COMPLETION_REPORT.md](./PROJECT_COMPLETION_REPORT.md)** - Executive summary
-  - What was accomplished
-  - Technical specifications
-  - Feature checklist
-  - Success metrics
+### 👤 Job Seeker Features
+- Browse and search job listings
+- Apply to multiple jobs
+- Track application status
+- Build and manage resumes
+- Manage user profile and preferences
 
-### Frontend Design
-- **[FRONTEND_REDESIGN_SUMMARY.md](./FRONTEND_REDESIGN_SUMMARY.md)** - Design details
-  - All 13 redesigned templates
-  - Feature descriptions
-  - Design improvements
-  - Component specifications
+### 🔐 Security Features
+- CSRF protection
+- SQL injection prevention
+- XSS protection
+- Secure password hashing
+- Session management
+- WhiteNoise for static file serving in production
 
-### Design System & Styling
-- **[DESIGN_SYSTEM.md](./DESIGN_SYSTEM.md)** - Technical reference
-  - Color palette
-  - Typography
-  - Component styles
-  - CSS specifications
-  - Responsive breakpoints
-
----
-
-## 📁 Project Structure
-
-```
-job1/
-├── manage.py                           # Django management script
-├── db.sqlite3                          # Database file
-├── requirements.txt                    # Python dependencies
-├── pytest.ini                          # Test configuration
-│
-├── job1/                               # Main Django project
-│   ├── settings.py                     # Project settings
-│   ├── urls.py                         # URL routing
-│   ├── wsgi.py                         # WSGI application
-│   └── __init__.py
-│
-├── templates/                          # All HTML templates
-│   ├── base.html                       # ✅ Redesigned
-│   ├── home.html                       # ✅ Redesigned
-│   ├── jobs/
-│   │   ├── job_list.html               # ✅ Redesigned
-│   │   ├── job_detail.html             # ✅ Redesigned
-│   │   └── apply_job.html              # ✅ Redesigned
-│   ├── companies/
-│   │   ├── company_profile.html        # ✅ Redesigned
-│   │   └── job_create.html             # ✅ Redesigned
-│   ├── users/
-│   │   ├── login.html                  # ✅ Redesigned
-│   │   ├── register.html               # ✅ Redesigned
-│   │   └── profile.html                # ✅ Redesigned
-│   ├── resume_builder/
-│   │   ├── resume_form.html            # ✅ Redesigned
-│   │   └── resume_preview.html         # ✅ Redesigned
-│   └── applicants/
-│       └── applicants_list.html        # ✅ Redesigned
-│
-├── static/                             # Static files
-│   ├── css/
-│   ├── js/
-│   └── images/
-│
-├── users/                              # User app
-│   ├── models.py                       # CustomUser model
-│   ├── views.py                        # Authentication views
-│   ├── urls.py                         # User URLs
-│   └── forms.py                        # User forms
-│
-├── jobs/                               # Jobs app
-│   ├── models.py                       # Job model
-│   ├── views.py                        # Job views
-│   ├── urls.py                         # Job URLs
-│   └── forms.py                        # Job forms
-│
-├── companies/                          # Companies app
-│   ├── models.py                       # Company model
-│   ├── views.py                        # Company views
-│   ├── urls.py                         # Company URLs
-│   └── forms.py                        # Company forms
-│
-├── applicants/                         # Applicants app
-│   ├── models.py                       # Applicant model
-│   ├── views.py                        # Applicant views
-│   ├── urls.py                         # Applicant URLs
-│   └── forms.py                        # Applicant forms
-│
-├── resume_builder/                     # Resume Builder app
-│   ├── models.py                       # Resume model
-│   ├── views.py                        # Resume views
-│   ├── urls.py                         # Resume URLs
-│   └── forms.py                        # Resume forms
-│
-├── tests/                              # Test files
-│   ├── test_applicants.py
-│   ├── test_companies.py
-│   ├── test_jobs.py
-│   ├── test_resume_builder.py
-│   ├── test_users.py
-│   └── conftest.py
-│
-└── Documentation Files (This Directory)
-    ├── README.md (this file)
-    ├── PROJECT_COMPLETION_REPORT.md
-    ├── FRONTEND_REDESIGN_SUMMARY.md
-    ├── DESIGN_SYSTEM.md
-    └── QUICK_START_GUIDE.md
-```
-
----
-
-## 🎯 Key Features at a Glance
-
-### For Job Seekers
-- ✅ Browse job listings with advanced filtering
-- ✅ Apply for jobs with cover letter and resume
-- ✅ Track application status
-- ✅ Build professional resume
-- ✅ Manage user profile and skills
-
-### For Employers
-- ✅ Create and manage company profile
-- ✅ Post job opportunities
-- ✅ Review job applications
-- ✅ Accept or reject applicants
-- ✅ Manage all applications centrally
-
-### For Everyone
-- ✅ Secure authentication
-- ✅ Professional design
-- ✅ Responsive interface
-- ✅ Intuitive navigation
-- ✅ Mobile-friendly layout
-
----
-
-## 🎨 Design Highlights
-
-### Color Scheme
-- **Primary Blue**: #2563eb
-- **Secondary Blue**: #1e40af
-- **Accent Gold**: #f59e0b
-- **Clean White**: #ffffff
-
-### Modern Features
-- ✨ Gradient backgrounds
-- 🎭 Smooth animations
-- 📱 Responsive layout
-- ♿ Accessibility standards
-- 🎯 Professional typography
-- 🔧 Intuitive forms
-
----
-
-## 🔧 Technical Stack
+## Technology Stack
 
 ### Backend
-- **Framework**: Django 5.2.8
-- **Database**: SQLite3
-- **Python**: 3.13.2
+- **Django 5.2.8** - Python web framework
+- **Django REST Framework** - API development
+- **PostgreSQL/SQLite** - Database (PostgreSQL for production)
+- **Gunicorn** - WSGI application server
+- **python-decouple** - Environment variable management
+- **dj-database-url** - Database URL parsing
 
 ### Frontend
-- **CSS Framework**: Bootstrap 5.3.0
-- **Icon Library**: Font Awesome 6.0.0
-- **Styling**: Custom CSS with CSS Variables
+- **Bootstrap 5.3** - CSS framework
+- **Font Awesome 6.4** - Icon library
+- **CSS3** - Modern styling with animations
+- **JavaScript** - Interactive components
 
-### Development
-- **Testing**: pytest
-- **Version Control**: Git
-- **Package Manager**: pip
+### Additional Libraries
+- **Pillow** - Image processing
+- **WeasyPrint** - PDF generation for resumes
+- **Django Crispy Forms** - Form rendering
+- **WhiteNoise** - Static file compression
 
----
+## Installation & Setup
 
-## 📊 Statistics
+### Prerequisites
+- Python 3.11 or higher
+- pip (Python package manager)
+- Virtual environment (recommended)
 
-### Templates Updated
-- **Total Templates**: 13
-- **Status**: 100% Redesigned
-- **Lines Modified**: 3000+
-- **CSS Enhancements**: 100+
+### Local Development Setup
 
-### Database
-- **Models**: 8 core models
-- **Migrations**: 25 applied
-- **Tables**: All created successfully
-- **Status**: ✅ Fully functional
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/yourusername/jobportal.git
+   cd jobportal/job1
+   ```
 
-### Features
-- **User Features**: 10+
-- **Job Features**: 15+
-- **Admin Features**: 5+
-- **Total Features**: 30+
+2. **Create and activate virtual environment**
+   ```bash
+   # Windows
+   python -m venv venv
+   venv\Scripts\activate
+   
+   # macOS/Linux
+   python3 -m venv venv
+   source venv/bin/activate
+   ```
 
----
+3. **Install dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-## 🚀 Server Information
+4. **Create .env file** (copy from .env.example)
+   ```bash
+   cp .env.example .env
+   ```
 
-### Current Status
-- **Status**: ✅ Running
-- **URL**: http://127.0.0.1:8000/
-- **Port**: 8000
-- **Environment**: Development
+5. **Run migrations**
+   ```bash
+   python manage.py migrate
+   ```
 
-### System Checks
-- ✅ Django configuration valid
-- ✅ Database configured correctly
-- ✅ Settings correct
-- ✅ No critical issues
+6. **Create superuser**
+   ```bash
+   python manage.py createsuperuser
+   ```
 
----
+7. **Run development server**
+   ```bash
+   python manage.py runserver
+   ```
 
-## 📖 Reading Guide
+8. **Access the application**
+   - Home: http://localhost:8000/
+   - Admin: http://localhost:8000/admin/
 
-### For Quick Overview
-1. Start with [QUICK_START_GUIDE.md](./QUICK_START_GUIDE.md)
-2. Skim [PROJECT_COMPLETION_REPORT.md](./PROJECT_COMPLETION_REPORT.md)
-
-### For Design Details
-1. Read [FRONTEND_REDESIGN_SUMMARY.md](./FRONTEND_REDESIGN_SUMMARY.md)
-2. Reference [DESIGN_SYSTEM.md](./DESIGN_SYSTEM.md)
-
-### For Implementation
-1. Check [DESIGN_SYSTEM.md](./DESIGN_SYSTEM.md) for specifications
-2. Reference individual template sections
-3. Follow CSS variable conventions
-
-### For Maintenance
-1. Use [DESIGN_SYSTEM.md](./DESIGN_SYSTEM.md) for consistency
-2. Keep color codes and spacing standardized
-3. Maintain responsive design patterns
-
----
-
-## 🔐 Security Features
-
-- ✅ User authentication system
-- ✅ Password encryption
-- ✅ CSRF protection
-- ✅ Role-based access control
-- ✅ Secure session management
-
----
-
-## 🌐 Browser Support
-
-| Browser | Version | Status |
-|---------|---------|--------|
-| Chrome | v90+ | ✅ Full Support |
-| Firefox | v88+ | ✅ Full Support |
-| Safari | v14+ | ✅ Full Support |
-| Edge | v90+ | ✅ Full Support |
-| Mobile Safari | iOS 12+ | ✅ Full Support |
-| Chrome Mobile | v90+ | ✅ Full Support |
-
----
-
-## 📱 Responsive Breakpoints
+## Project Structure
 
 ```
-Mobile:   < 576px   (Phones)
-Tablet:   576-992px (Tablets)
-Desktop:  > 992px   (Computers)
+jobportal/
+├── job1/                      # Main Django project
+│   ├── manage.py             # Django management script
+│   ├── requirements.txt       # Python dependencies
+│   ├── db.sqlite3           # SQLite database (development)
+│   ├── build.sh             # Render build script
+│   ├── render.yaml          # Render deployment config
+│   ├── .env.example         # Environment variables template
+│   │
+│   ├── job1/                # Project settings
+│   │   ├── settings.py      # Django configuration
+│   │   ├── urls.py          # URL routing
+│   │   ├── wsgi.py          # WSGI configuration
+│   │
+│   ├── templates/           # HTML templates
+│   │   ├── base.html        # Base template with navbar/footer
+│   │   ├── home.html        # Home page
+│   │   ├── jobs/            # Job-related templates
+│   │   ├── companies/       # Company-related templates
+│   │   ├── users/           # User-related templates
+│   │   └── resume_builder/  # Resume builder templates
+│   │
+│   ├── static/              # Static files
+│   │   ├── css/             # Custom CSS
+│   │   └── js/              # JavaScript files
+│   │
+│   ├── media/               # User-uploaded files
+│   │
+│   └── apps/                # Django apps
+│       ├── users/           # User authentication & management
+│       ├── jobs/            # Job listings & applications
+│       ├── companies/       # Company profiles & management
+│       ├── applicants/      # Application tracking
+│       └── resume_builder/  # Resume creation & management
+│
+└── README.md               # This file
 ```
 
-All templates are fully responsive on all breakpoints.
+## Database Schema
+
+### User Roles
+- **Admin**: Full system access
+- **Job Seeker**: Can browse jobs, apply, create resumes
+- **Employer**: Can create company profile, post jobs, view applications
+
+### Key Models
+- **CustomUser**: Extended user model with role field
+- **Company**: Employer company information
+- **Job**: Job listing details
+- **Application**: Job application tracking
+- **Resume**: Resume information for job seekers
+- **Profile**: User profile preferences
+
+## Environment Variables
+
+Create a `.env` file in the project root with:
+
+```env
+# Django Settings
+DEBUG=False
+SECRET_KEY=your-very-secure-secret-key-here
+ALLOWED_HOSTS=localhost,127.0.0.1,yourdomain.com
+
+# Database (Optional - leave empty for SQLite)
+DATABASE_URL=postgresql://user:password@host:5432/dbname
+
+# Render.com will automatically set these:
+# DATABASE_URL (PostgreSQL URL from add-on)
+# SECRET_KEY (generated automatically)
+```
+
+## Deployment to Render
+
+### Step-by-Step Deployment Guide
+
+1. **Push code to GitHub**
+   ```bash
+   git add .
+   git commit -m "Prepare for Render deployment"
+   git push origin main
+   ```
+
+2. **Create Render Account**
+   - Visit [Render.com](https://render.com)
+   - Sign up with your GitHub account
+
+3. **Connect GitHub Repository**
+   - Go to Dashboard → New → Web Service
+   - Connect your GitHub repository
+   - Select the repository containing this project
+
+4. **Configure Web Service**
+   - **Name**: jobportal
+   - **Runtime**: Python 3.11
+   - **Build Command**: `pip install -r requirements.txt && python manage.py collectstatic --noinput && python manage.py migrate`
+   - **Start Command**: `gunicorn job1.wsgi:application`
+   - **Auto-deploy**: Enable
+
+5. **Set Environment Variables**
+   - Go to Environment in service settings
+   - Add these variables:
+     ```
+     DEBUG=False
+     ALLOWED_HOSTS=yourdomain.onrender.com
+     ```
+   - `SECRET_KEY` and `DATABASE_URL` will be auto-generated by Render
+
+6. **Add PostgreSQL Database (Optional but Recommended)**
+   - Click "Add PostgreSQL" in the services panel
+   - Select plan (free tier available)
+   - Database URL will be automatically added to environment
+
+7. **Deploy**
+   - Click "Deploy" button
+   - Monitor deployment logs
+   - Once complete, access your app at provided URL
+
+### Render Deployment Features
+- **Auto-deploy on push**: Changes pushed to main branch auto-deploy
+- **Free tier available**: Run production apps without cost
+- **PostgreSQL included**: Free database with web service
+- **SSL certificate**: Automatic HTTPS for all apps
+- **Environment variables**: Secure secret management
+
+## Usage
+
+### For Job Seekers
+1. Register as "Job Seeker"
+2. Browse job listings on the Jobs page
+3. Click on jobs to view details
+4. Click "Apply" to submit application
+5. Track applications in "Applications" section
+6. Use Resume Builder to create professional resume
+
+### For Employers
+1. Register as "Employer"
+2. Create company profile with logo and description
+3. Go to "Post Job" to create job listings
+4. Add job details (title, description, salary, location, etc.)
+5. View posted jobs in company profile
+6. See applications in company dashboard
+
+### For Admins
+1. Access Django admin at `/admin/`
+2. Manage users, jobs, companies
+3. Approve/reject job listings
+4. Monitor applications
+
+## API Endpoints
+
+### Jobs
+- `GET /jobs/` - List all jobs
+- `GET /jobs/<id>/` - Job details
+- `POST /jobs/<id>/apply/` - Apply to job
+- `POST /jobs/post/` - Create new job (employer only)
+
+### Companies
+- `GET /companies/<id>/` - Company profile
+- `POST /companies/create/` - Create company (employer only)
+
+### Users
+- `GET /profile/` - User profile
+- `POST /login/` - User login
+- `POST /register/` - User registration
+- `POST /logout/` - User logout
+
+## Performance Optimizations
+
+- **Static files**: Compressed with WhiteNoise
+- **Database queries**: Optimized with select_related/prefetch_related
+- **Caching**: Page-level caching enabled
+- **Security headers**: CSP, XSS protection enabled
+- **CDN**: Bootstrap and Font Awesome served via CDN
+
+## Security Considerations
+
+1. **Never commit `.env` file** - Use `.env.example` as template
+2. **Change SECRET_KEY** - Generate strong secret key for production
+3. **Use HTTPS** - Always use HTTPS in production
+4. **Database security** - Use strong passwords for PostgreSQL
+5. **Regular updates** - Keep Django and dependencies updated
+
+## Troubleshooting
+
+### Common Issues
+
+**Issue**: Static files not loading in production
+- **Solution**: Run `python manage.py collectstatic --noinput`
+
+**Issue**: Database migrations fail
+- **Solution**: Check DATABASE_URL environment variable, ensure migrations exist
+
+**Issue**: 502 Bad Gateway on Render
+- **Solution**: Check build logs, verify Gunicorn start command
+
+**Issue**: CSRF token missing
+- **Solution**: Ensure session middleware is enabled, check CSRF_TRUSTED_ORIGINS
+
+## Development Tips
+
+### Create Test Data
+```bash
+python manage.py shell
+from jobs.models import Job, Company
+from users.models import CustomUser
+
+# Add sample data in shell
+```
+
+### Run Tests
+```bash
+python manage.py test
+```
+
+### Access Django Shell
+```bash
+python manage.py shell
+```
+
+### Database Backup
+```bash
+# SQLite
+cp db.sqlite3 db.sqlite3.backup
+
+# PostgreSQL
+pg_dump databasename > backup.sql
+```
+
+## Contributing
+
+1. Fork the repository
+2. Create feature branch: `git checkout -b feature/YourFeature`
+3. Commit changes: `git commit -m 'Add YourFeature'`
+4. Push to branch: `git push origin feature/YourFeature`
+5. Open a Pull Request
+
+## Future Enhancements
+
+- [ ] Email notifications for applications
+- [ ] Advanced job search filters
+- [ ] Job recommendations based on profile
+- [ ] Two-factor authentication
+- [ ] Social media login integration
+- [ ] Video interview capabilities
+- [ ] Salary comparison tools
+- [ ] Mobile app (React Native)
+- [ ] Real-time notifications with WebSockets
+- [ ] Analytics dashboard for employers
+
+## License
+
+This project is licensed under the MIT License - see LICENSE file for details.
+
+## Support
+
+For issues, questions, or suggestions:
+- Open an issue on GitHub
+- Contact: support@jobportal.com
+- Documentation: [Full docs](https://github.com/yourusername/jobportal/wiki)
+
+## Acknowledgments
+
+- Django community for excellent framework
+- Bootstrap team for responsive UI framework
+- Font Awesome for icon library
+- All contributors and users
 
 ---
 
-## 🎓 Learning Resources
+**Built with ❤️ by the JobPortal Team**
 
-### Django
-- [Django Official Documentation](https://docs.djangoproject.com/)
-- [Django Models Guide](https://docs.djangoproject.com/en/5.2/topics/db/models/)
-- [Django Views Guide](https://docs.djangoproject.com/en/5.2/topics/http/views/)
-
-### Frontend
-- [Bootstrap 5 Documentation](https://getbootstrap.com/docs/5.3/)
-- [Font Awesome Icons](https://fontawesome.com/icons)
-- [CSS Variables Guide](https://developer.mozilla.org/en-US/docs/Web/CSS/--*)
-
-### Responsive Design
-- [Mobile First Approach](https://developer.mozilla.org/en-US/docs/Mobile/Viewport_meta_tag)
-- [CSS Media Queries](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries)
-- [Flexbox Guide](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox)
-
----
-
-## 🤝 Support & Contributions
-
-For questions or issues:
-
-1. **Check the documentation** - Most answers are in the guides above
-2. **Review the code** - Comments explain key implementations
-3. **Check Django docs** - Official documentation for Django-specific questions
-4. **Test in browser** - Use browser dev tools (F12) to debug
-
----
-
-## ✅ Quality Checklist
-
-- ✅ All templates updated
-- ✅ Consistent design system
-- ✅ Responsive design verified
-- ✅ Accessibility standards met
-- ✅ Performance optimized
-- ✅ Security configured
-- ✅ Documentation complete
-- ✅ Server running successfully
-
----
-
-## 📝 Version History
-
-| Version | Date | Status | Changes |
-|---------|------|--------|---------|
-| 1.0 | Nov 14, 2025 | ✅ Complete | Initial frontend redesign |
-
----
-
-## 🎉 Project Status
-
-### Overall Status: ✅ **PRODUCTION READY**
-
-**Completed**: 13/13 Templates
-**Tests Passed**: All Core Features
-**Documentation**: Complete
-**Server**: Running Successfully
-
----
-
-## 🚀 Next Steps
-
-1. **Access the Application**: Visit http://127.0.0.1:8000/
-2. **Create an Account**: Register as Job Seeker or Employer
-3. **Explore Features**: Try all major features
-4. **Provide Feedback**: Suggest improvements
-
----
-
-## 📞 Quick Links
-
-- 🌐 **Live Server**: http://127.0.0.1:8000/
-- 📋 **Frontend Summary**: FRONTEND_REDESIGN_SUMMARY.md
-- 📖 **Quick Start**: QUICK_START_GUIDE.md
-- 🎨 **Design System**: DESIGN_SYSTEM.md
-- 📊 **Project Report**: PROJECT_COMPLETION_REPORT.md
-
----
-
-**Welcome to Job Portal! 🎊**
-
-*Professional Design • Modern Features • Ready to Deploy*
-
----
-
-*Last Updated: November 14, 2025*
-*Version: 1.0*
-*Status: ✅ Production Ready*
+Last Updated: November 2025

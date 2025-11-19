@@ -1,17 +1,19 @@
 services:
   - type: web
     name: jobportal
-    env: docker
+    env: python
     region: ohio
     plan: free
-    # Render will build using the repository Dockerfile. No buildCommand needed.
-    # The service will expose the port configured by the container (Gunicorn binds to 8000).
-    startCommand: ./entrypoint.sh
+    buildCommand: |
+      pip install -r requirements.txt
+      python manage.py collectstatic --noinput
+      python manage.py migrate
+    startCommand: gunicorn job1.wsgi:application
     envVars:
       - key: DEBUG
         value: false
       - key: SECRET_KEY
         generateValue: true
-      - key: DATABASE_URL
-        value: ''
+      - key: PYTHON_VERSION
+        value: "3.11"
     healthCheckPath: /
