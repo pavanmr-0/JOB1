@@ -3,6 +3,7 @@ set -e
 
 # Apply database migrations, collectstatic, then start gunicorn
 echo "Running migrations..."
+cd /app/JOB1 || exit 0
 python manage.py migrate --noinput
 
 echo "Collecting static files..."
