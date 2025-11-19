@@ -32,7 +32,8 @@ WORKDIR /app
 # Install pip dependencies
 COPY requirements.txt ./
 RUN python -m pip install --upgrade pip setuptools wheel
-RUN pip install -r requirements.txt
+# Use prefer-binary and no-cache to favour prebuilt wheels and reduce layer size
+RUN pip install --prefer-binary --no-cache-dir -r requirements.txt
 
 # Copy project
 COPY . /app
